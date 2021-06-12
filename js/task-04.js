@@ -1,21 +1,25 @@
 'use strict';
 
-let counterValue = document.getElementById('value');
+let counterValue = parseInt((document.getElementById('value')).textContent);
+const counter = document.getElementById('value');
+console.log(counter.textContent);
 
 const buttons = document.querySelectorAll('button');
 const decBtn = buttons[0];
 const inkBtn = buttons[1];
 
 const increment = () => {    
-    counterValue.textContent = parseInt(counterValue.textContent) + 1;
-    // console.log(counterValue.textContent);
+    
+    counter.textContent = counterValue += 1;
+    // console.log(counterValue);
 };
+
 
 inkBtn.addEventListener('click', increment);
 
 const decrement = () => { 
-    counterValue.textContent = parseInt(counterValue.textContent) - 1;
-    // console.log(counterValue.textContent);
+     counter.textContent = counterValue -= 1;
+    // console.log(counterValue);
 };
 
 decBtn.addEventListener('click', decrement);

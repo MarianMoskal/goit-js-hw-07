@@ -21,8 +21,9 @@ const images = [
 
 const imageList = document.querySelector('#gallery');
 
-    images.forEach(image => {
-        const { url, alt }  = image;
+    images.map(image => {
+      const { url, alt } = image;
+      
         imageList.insertAdjacentHTML(
             'beforeend',
             `<li><img src=${url} alt='${alt}'
