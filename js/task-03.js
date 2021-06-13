@@ -21,16 +21,13 @@ const images = [
 
 const imageList = document.querySelector('#gallery');
 
-    images.map(image => {
-      const { url, alt } = image;
-      
-        imageList.insertAdjacentHTML(
-            'beforeend',
-            `<li><img src=${url} alt='${alt}'
-            width = 420 height = 350</li>`
-        );
-    
-    });
+const markup = images.map(({ url, alt }) => {
+    return `<li><img src=${url} alt='${alt}'
+             width = 420 height = 350</li>`;
+
+});
+
+imageList.insertAdjacentHTML("beforeend", markup.join(" "));
 
 imageList.classList.add('gallery');
 
