@@ -16,16 +16,16 @@ const randomizer = max => {
 
 const createBoxes = () => {
   const amount = inputEl.value;
-
+  const items = [];
       for (let i = 0; i < amount; i += 1){
           const item = document.createElement('div');
         item.style.backgroundColor = colors[randomizer(colors.length)];
         item.style.width = `${itemSize}px`;
         item.style.height = `${itemSize}px`;
         itemSize += 10;
-        boxesDiv.appendChild(item);
+        items.push(item);
       };
-  
+  boxesDiv.append(...items);
 };
 
 const destroyBoxes = () => {
